@@ -1,0 +1,61 @@
+<%-include('header.ejs')%>
+   
+
+      <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <form class="row g-3" action="Signup_now" method="post">
+                    <div class="col-12">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputName" name="PersonName" placeholder="Enter your name here" required>
+                      </div>
+                    <div class="col-12">
+                      <label for="inputEmail4" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputEmail4" name="PersonEmail" required>
+                    </div>
+
+                        <div class="col-12">
+                          <label for="">Gender &nbsp;&nbsp;</label>
+                          <div class="form-check form-check-inline">
+                            
+                            <input class="form-check-input" type="radio" name="gen" id="inlineRadio1" value="option1" checked>
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gen" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                          </div>
+                        </div>
+                          
+                    
+                    <div class="col-md-12">
+                        <label for="inputMobile" class="form-label">Mobile</label>
+                        <input type="number" class="form-control" id="inputMobile" name="PersonMobile" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="PersonPassword" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <textarea rows="5" cols="10"  class="form-control" id="inputAddress" name="PersonAddress" placeholder="Enter the address here" required ></textarea>  
+                      </div>
+                    <div class="col-12 text-center">
+                     <button type="submit" class="btn btn-primary" id="signup">Sign Up</button>
+                    </div>
+                  </form>
+                  <% if(err) { %>
+                    <h3><%=err %></h3>
+                  <%}%>
+                  <% if(message) { %>
+                      <script>
+                        alert('<%=message %>')
+                        window.location='/login'
+                      </script>
+                  <%}%>
+                    
+            </div>
+        </div>
+      </div>
+</body>
+</html>

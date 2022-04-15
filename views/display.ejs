@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mybutt{
+          
+            margin: none;
+            padding: none;
+            text-decoration: none;
+            color: black;
+            text-decoration: underline ;
+        }
+        .mybutt:hover{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Student Record</h1><br>
+    <table border="1" cellpadding="10" bordercolor="red" align="center">
+        <tr>
+            <td>Student Name</td>
+            <td>Student Roll</td>
+            <td>Student Branch</td>
+            <td>Action</td>
+        </tr>
+        <% for(var i=0;i<mydata.length;i++) { %>
+            <tr>
+                <td><%=mydata[i].Name%></td>
+                <td><%=mydata[i].Roll%></td>
+                <td><%=mydata[i].Branch%></td>
+                <td><a class="mybutt" onclick='return confirm("Are you sure?")' href='delete_stu?rl=<%=mydata[i].Roll %>'>Delete</a></td>
+            </tr>
+        <%}%>
+    </table>
+    <% if(message) { %>
+        <script>
+            alert("Record deleted Sucessfully")
+            setTimeout(()=>{
+                window.location="/displayStudent"
+            },2000)
+        </script>
+    <%}%>
+</body>
+</html>
